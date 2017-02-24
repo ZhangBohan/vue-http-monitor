@@ -8,12 +8,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/requests/:uuid',
       name: 'RequestDetail',
       component: RequestDetail
     },
     {
-      path: '/requests',
+      path: '/',
       name: 'Requests',
       component: Requests
     }
