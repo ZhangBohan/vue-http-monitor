@@ -9,6 +9,9 @@
         </el-col>
       </el-row>
       <el-collapse accordion v-model="activeNames">
+        <el-collapse-item title="请求体" name="0">
+          <pre>{{ stringify(request.body) }}</pre>  
+        </el-collapse-item>
         <el-collapse-item title="响应" name="1">
           <pre>{{ stringify(response) }}</pre>  
         </el-collapse-item>
@@ -102,6 +105,9 @@ export default {
       })
     },
     stringify (data) {
+      if (typeof (data) === 'string') {
+        data = JSON.parse(data)
+      }
       return JSON.stringify(data, null, '  ')
     },
 
